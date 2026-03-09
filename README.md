@@ -34,7 +34,7 @@ The decoded protobuf file has the following file strucutre:
 
 ```protobuf
 1 {
-    1: "<File Name/Path To File>
+    1: "<File Name/Path To File>"
     2 {
         1: "<Some Sort Of Hash>"
         2: "<Some Sort of Hash>"
