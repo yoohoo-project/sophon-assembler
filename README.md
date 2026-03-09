@@ -50,5 +50,5 @@ This file structure repeats itself for hundreds of thounds of lines (The Genshin
 The "1" under each "2" subfield is the final piece of the puzzle. You can now assemble a final download link for **ONE** chunk of a program. Combine ``url_prefix`` from the second API endpoint with the hash for a final download link:
 
 ```txt
-https://autopatchhk.yuanshen.com/client_app/sophon/chunks/cxhpq4g4rgg0/jJ6hfpe1NGBu/{Download Hash}
+https://{url_prefix}/{download hash}
 ```
