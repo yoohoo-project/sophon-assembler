@@ -69,4 +69,30 @@ export type BranchStats = {
     uncompressed_size: string;
     file_count: string;
     chunk_count: string;
-}
+};
+
+export type GameCode =
+    | 'bh3-global'
+    | 'bh3-jp'
+    | 'bh3-kr'
+    | 'bh3-sea'
+    | 'bh3-tw'
+    | 'hk4e'
+    | 'hkrpg'
+    | 'nap';
+
+export type ManifestData = {
+    game: GameCode;
+    languages: LanguageInformation[];
+};
+
+export type LanguageInformation = {
+    language: string;
+    index: number;
+};
+
+export type ProtoValue = string | number | ProtoObject;
+
+export type ProtoObject = { 
+    [field: string]: ProtoValue | ProtoValue[] 
+};

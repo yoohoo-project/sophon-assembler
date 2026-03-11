@@ -62,4 +62,5 @@ Projects already exist for downloading and resolving Sohpon chunks. However, I w
 The endpoint structure will be as such:
 
 - Main Endpoint: ``https://sophon.shob3r.dev/``. This will list Sophon chunks for every game
-- Game-Specific: ``https://sophon.shob3r.dev/{game_code}``. This will list Sophon chunks for a requested game using their respective game code (bh3, hk4e, hkrpg, nap)
+- Game-Specific: ``https://sophon.shob3r.dev/{game_code}``. This will list Sophon chunks for a requested game using their respective game code (bh3, bh3_sea, hk4e, hkrpg, nap)
+- Voice-Overs: ``https://sophon.shob3r.dev/voice/{game_code}``. This will list Sophon chunks for the voice assets of a requested game.
