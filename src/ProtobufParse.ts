@@ -154,12 +154,17 @@ const decodeProtobuf = (buf: Buffer | Uint8Array): ProtoObject => {
 };
 
 (async () => {
+    let totalRunTimes = 0;
     for (let i = 0; i < manifestData.length; i++) {
         const gameName = manifestData[i].game;
 
         // Include all language indices (1-n) and also the base game assets (0)
-        for (let i = 0; i <= manifestData[i].languages.length; i++) {
-            const res = await getProtobufData(gameName, i);
+        for (let j = 0; j <= manifestData[i].languages.length; j++) {
+            const res = await getProtobufData(gameName, j);
+            console.log(res);
+            totalRunTimes++;
         }
     }
+
+    console.log(`Total run times: ${totalRunTimes}`)
 })();
