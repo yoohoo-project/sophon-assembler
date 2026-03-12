@@ -1,7 +1,7 @@
 import { getProtobufData } from './ProtobufParse';
 import { GameCode, Languages } from './types';
 
-const getManifestIndex = (game: GameCode, voiceLanguage: Languages) => {
+export const getManifestIndex = (game: GameCode, voiceLanguage: Languages) => {
     if (game.toString().includes('bh3')) {
         return 1;
     } else {
@@ -15,6 +15,27 @@ const getManifestIndex = (game: GameCode, voiceLanguage: Languages) => {
             case 'kr':
                 return 4;
         }
+    }
+};
+
+export const getLanguageFromIndex = (
+    game: GameCode,
+    index: 1 | 2 | 3 | 4,
+): Languages => {
+    if (['bh3-sea', 'bh3-tw'].includes(game)) {
+        return 'cn';
+    } else if (['bh3-global', 'bh3-kr', 'bh3-jp'].includes(game)) {
+        return 'jp';
+    }
+    switch (index) {
+        case 1:
+            return 'cn';
+        case 2:
+            return 'en';
+        case 3:
+            return 'jp';
+        case 4:
+            return 'kr';
     }
 };
 

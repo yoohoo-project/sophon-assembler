@@ -9,7 +9,6 @@ import {
     ProtoObject,
     ProtoValue,
 } from './types';
-import { manifestData } from './ManifestData';
 
 const LAUNCHER_ID = 'VYTpXlbWo8';
 const HYV_FRONT_DOOR = `https://sg-hyp-api.hoyoverse.com/hyp/hyp-connect/api/getGameBranches?=gopR6Cufr3&launcher_id=${LAUNCHER_ID}`;
@@ -158,19 +157,4 @@ const decodeProtobuf = (buf: Buffer | Uint8Array): ProtoObject => {
     return obj;
 };
 
-/*(async () => {
-    let totalRunTimes = 0;
-    for (let i = 0; i < manifestData.length; i++) {
-        const gameName = manifestData[i].game;
 
-        // Include all language indices (1-n) and also the base game assets (0)
-        for (let j = 0; j <= manifestData[i].languages.length; j++) {
-            const res = await getProtobufData(gameName, j);
-            console.log(res);
-            totalRunTimes++;
-        }
-    }
-
-    console.log(`Total run times: ${totalRunTimes}`);
-})();
-*/

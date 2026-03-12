@@ -2,17 +2,17 @@ name: Update Sophon Chunk Endpoint
 
 on:
     schedule:
-        - cron: "0 * * * *"
+        - cron: '0 * * * *'
 
-jobs: 
+jobs:
     update-endpoint:
         permissions:
             contents: read
         runs-on: ubuntu-24.04
-        steps: 
+        steps:
             - uses: actions/checkout@v4
             - uses: oven-sh/setup-bun@v2
-            
+
             - name: Update Content
               run: |
-                bun run src/ProtobufParse.ts
+                  bun run update-chunks
