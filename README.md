@@ -61,7 +61,7 @@ Projects already exist for downloading and resolving Sohpon chunks. However, I w
 
 ## Endpoint Structure
 
-- ``shophon.shob3r.dev``: All game chunk endpoint
-- ``sophon.shob3r.dev/{game id}``: All chunks for specific game id (bh3-global/jp/kr/sea/tw, hk4e, hkrpg, nap)
-- ``sophon.shob3r.dev/{game id}/voice``: All voice chunks for specific game id (all languages)
-- ``sophon.shob3r.dev/{game id}/voice/{language}``: All voice chunks for specific game id (specified language, note that hi3 only has cn/jp chunks depending on which server variant is being used. All other games have cn/en/jp/kr voice over chunks).
+- `shophon.shob3r.dev`: All game chunk endpoint. This will take a very long time to load, I wouldn't recommend using this for any projects
+- `sophon.shob3r.dev/{game id}`: All chunks for specific game id (bh3-global/jp/kr/sea/tw, hk4e, hkrpg, nap)
+- `sophon.shob3r.dev/{game id}/voice`: All voice chunks for specific game id (all languages)
+- `sophon.shob3r.dev/{game id}/voice/{language}`: All voice chunks for specific game id (specified language, note that hi3 only has cn/jp chunks depending on which server variant is being used. All other games have cn/en/jp/kr voice over chunks).
