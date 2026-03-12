@@ -14,7 +14,7 @@ The Sophon chunk download system works by hosting many individual links to small
 
 #### Step 1: Access the "Front Door"
 
-This is the first of two endpoints that are needed to assemble a final download URL. [The endpoint can be viewed here](https://sg-hyp-api.hoyoverse.com/hyp/hyp-connect/api/getGameBranches?=gopR6Cufr3&launcher_id=VYTpXlbWo8). This endpoint will provide the package id and "password" needed to get to the second endpoint
+This is the first of two endpoints that are needed to assemble a final download URL. [The endpoint can be viewed here](https://sg-hyp-api.hoyoverse.com/hyp/hyp-connect/api/getGameBranches?&launcher_id=VYTpXlbWo8). This endpoint will provide the package id and "password" needed to get to the second endpoint
 
 #### Step 2: Access the manifest endpoint
 
