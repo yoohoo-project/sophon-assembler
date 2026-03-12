@@ -26,7 +26,7 @@ sg-public-api.hoyoverse.com/downloader/sophon/chunk/api/getbuild?branch=main&pac
 
 This endpoint does NOT provide the links to the chunks though. it only provides the two chunks needed for a protobuf manifest, which will first have to be downloaded and decoded, which will provide part of the chunks for the final download link.
 
-You can get the URL by appending the``id`` field under the ``manifest`` tag to the ``url_prefix`` tag, found under ``chunk_download``. The file downloaded must then be decompressed with zstd and then decoded with ``protoc`` (or equivilent for a language being used). From there, you have something you can work with.
+You can get the URL by appending the`id` field under the `manifest` tag to the `url_prefix` tag, found under `chunk_download`. The file downloaded must then be decompressed with zstd and then decoded with `protoc` (or equivilent for a language being used). From there, you have something you can work with.
 
 #### Step 3: Assembling The Chunk URL
 
@@ -47,7 +47,7 @@ The decoded protobuf file has the following file strucutre:
 
 This file structure repeats itself for hundreds of thounds of lines (The Genshin Impact 6.4 manifest is 868,280 lines long)
 
-The "1" under a "2" subfield is the final piece of the puzzle. You can now assemble a final download link for **ONE** chunk of a program. Combine ``url_prefix`` from the second API endpoint with the hash for a final download link:
+The "1" under a "2" subfield is the final piece of the puzzle. You can now assemble a final download link for **ONE** chunk of a program. Combine `url_prefix` from the second API endpoint with the hash for a final download link:
 
 ```txt
 https://{url_prefix}/{download hash}
@@ -59,8 +59,9 @@ That's it! you finally have an assmebled sophon chunk URL. Repeat this several t
 
 Projects already exist for downloading and resolving Sohpon chunks. However, I want to deobfuscate this issue and create an endpoint that just has a list of the final URLs to the chunks that is accessible by anyone who needs to access the Sophon chunks for any HoYoVerse game for any reason
 
-The endpoint structure will be as such:
+## Endpoint Structure
 
-- Main Endpoint: ``https://sophon.shob3r.dev/``. This will list Sophon chunks for every game
-- Game-Specific: ``https://sophon.shob3r.dev/{game_code}``. This will list Sophon chunks for a requested game using their respective game code (bh3, bh3_sea, hk4e, hkrpg, nap)
-- Voice-Overs: ``https://sophon.shob3r.dev/voice/{game_code}``. This will list Sophon chunks for the voice assets of a requested game.
+- ``shophon.shob3r.dev``: All game chunk endpoint
+- ``sophon.shob3r.dev/{game id}``: All chunks for specific game id (bh3-global/jp/kr/sea/tw, hk4e, hkrpg, nap)
+- ``sophon.shob3r.dev/{game id}/voice``: All voice chunks for specific game id (all languages)
+- ``sophon.shob3r.dev/{game id}/voice/{language}``: All voice chunks for specific game id (specified language, note that hi3 only has cn/jp chunks depending on which server variant is being used. All other games have cn/en/jp/kr voice over chunks).
