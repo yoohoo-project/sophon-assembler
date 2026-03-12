@@ -11,7 +11,7 @@ import {
 } from './types';
 
 const LAUNCHER_ID = 'VYTpXlbWo8';
-const HYV_FRONT_DOOR = `https://sg-hyp-api.hoyoverse.com/hyp/hyp-connect/api/getGameBranches?=gopR6Cufr3&launcher_id=${LAUNCHER_ID}`;
+const HYV_FRONT_DOOR = `https://sg-hyp-api.hoyoverse.com/hyp/hyp-connect/api/getGameBranches?&launcher_id=${LAUNCHER_ID}`;
 
 export const getProtobufData = async (
     gameCode: GameCode,
