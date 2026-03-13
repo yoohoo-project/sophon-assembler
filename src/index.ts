@@ -41,7 +41,8 @@ const audioLanguageExists = (game: string, language: string) => {
         (['bh3-global', 'bh3-jp', 'bh3-kr'].includes(game) &&
             language === 'jp') ||
         (['bh3-tw', 'bh3-sea'].includes(game) && language === 'cn') ||
-        ['cn', 'en', 'jp', 'kr'].includes(language)
+        (['hk4e', 'hkrpg', 'nap'].includes(game) &&
+            ['cn', 'en', 'jp', 'kr'].includes(language))
     );
 };
 
